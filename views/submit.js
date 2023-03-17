@@ -23,6 +23,7 @@ document.getElementById("submitBtn").addEventListener("click", () => {
     body: formData,
   }).then((res) => res.text());
 });
+
 // Loads the posts on page load
 function loadPosts() {
   fetch("/upload")
@@ -31,9 +32,11 @@ function loadPosts() {
       for (y = 0; y < x[0].length; y++) {
         console.log(x[0][y]);
         const newimg = document.createElement("img");
+
         newimg.setAttribute(
           "src",
-          "https://storage.googleapis.com/udamx-storage02/" + x[0][y].id
+          "https://storage.googleapis.com/udamx-storage02/sarym/user/profile-picture/" +
+            x[0][y].id
         );
         newimg.setAttribute("width", 50);
         newimg.setAttribute("height", 50);
